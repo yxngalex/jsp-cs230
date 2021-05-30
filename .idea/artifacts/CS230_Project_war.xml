@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="CS230-Project:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>CS230-Project</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="CS230-Project-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="CS230-Project:war exploded" />
+    </root>
+  </artifact>
+</component>
