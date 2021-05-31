@@ -27,7 +27,7 @@ create table job
 
 create table role
 (
-   role_id int not null auto_increment primary key
+   role_id int not null auto_increment primary key,
    role                 varchar(255)
 );
 
