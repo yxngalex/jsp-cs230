@@ -11,7 +11,7 @@ public class Job implements Serializable {
     @Column(name = "job_id")
     private Long idJob;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne
     @JoinTable(name = "firm", joinColumns = @JoinColumn(name = "firm_id"), inverseJoinColumns = @JoinColumn(name = "firm_id"))
     private Firm firm;
 
