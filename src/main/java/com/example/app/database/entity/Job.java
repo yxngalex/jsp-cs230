@@ -1,12 +1,18 @@
 package com.example.app.database.entity;
 
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+
 import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
 @Table(name = "job")
+@Data
+@EqualsAndHashCode(onlyExplicitlyIncluded = true)
 public class Job implements Serializable {
     @Id
+    @EqualsAndHashCode.Include
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "job_id")
     private Long idJob;
@@ -21,48 +27,8 @@ public class Job implements Serializable {
     @Column(name = "description")
     private String description;
 
-    public Job() {
-    }
-
-    public Long getIdJob() {
-        return idJob;
-    }
-
-    public void setIdJob(Long idJob) {
-        this.idJob = idJob;
-    }
-
-    public Firm getFirm() {
-        return firm;
-    }
-
-    public void setFirm(Firm firm) {
-        this.firm = firm;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
     @Override
     public String toString() {
-        return "Job{" +
-                "idJob=" + idJob +
-                ", firm=" + firm +
-                ", name='" + name + '\'' +
-                ", description='" + description + '\'' +
-                '}';
+        return name + ", " + description;
     }
 }
