@@ -1,4 +1,4 @@
-package com.example.CS230_Project.database.entity;
+package com.example.app.database.entity;
 
 import javax.persistence.*;
 import java.io.Serializable;

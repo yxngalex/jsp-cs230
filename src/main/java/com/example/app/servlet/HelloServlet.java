@@ -1,4 +1,4 @@
-package com.example.CS230_Project;
+package com.example.app.servlet;
 
 import java.io.*;
 import javax.servlet.http.*;
