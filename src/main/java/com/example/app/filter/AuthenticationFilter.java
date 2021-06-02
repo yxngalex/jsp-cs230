@@ -19,7 +19,6 @@ public class AuthenticationFilter implements Filter {
                             "/admin/login",
                             "/admin/logout",
                             "/admin/login.jsp",
-                            "/admin/setup.jsp",
                             "/admin/create"
                     )
             ));

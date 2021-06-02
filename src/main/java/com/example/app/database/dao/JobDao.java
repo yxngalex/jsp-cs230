@@ -5,14 +5,12 @@ import com.example.app.util.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
-import javax.transaction.Transactional;
 
 public class JobDao extends AbstractDao<Job>{
     public JobDao() {
         super(Job.class);
     }
 
-    @Transactional
     public Job findByName(final String jobName) {
         final String QUERY = "select j from Job j where j.name = :job";
         Job job = null;

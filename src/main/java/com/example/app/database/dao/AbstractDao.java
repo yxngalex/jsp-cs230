@@ -5,7 +5,6 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import javax.persistence.criteria.CriteriaQuery;
-import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,7 +15,6 @@ public abstract class AbstractDao<T> {
         this.entityClass = entityClass;
     }
 
-    @Transactional
     public void create(final T entity) {
         Transaction transaction = null;
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
@@ -32,7 +30,6 @@ public abstract class AbstractDao<T> {
         }
     }
 
-    @Transactional
     public T update(final T entity) {
         T t = null;
         Transaction transaction = null;
@@ -50,7 +47,6 @@ public abstract class AbstractDao<T> {
         return t;
     }
 
-    @Transactional
     public void remove(T entity) {
         Transaction transaction = null;
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
@@ -66,7 +62,6 @@ public abstract class AbstractDao<T> {
         }
     }
 
-    @Transactional
     public T find(Object id) {
         T t = null;
         Transaction transaction = null;
@@ -81,7 +76,6 @@ public abstract class AbstractDao<T> {
         return t;
     }
 
-    @Transactional
     public List<T> findAll() {
         List<T> tList = new ArrayList<>();
         Transaction transaction = null;

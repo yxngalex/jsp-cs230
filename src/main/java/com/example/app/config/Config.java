@@ -6,10 +6,7 @@ import java.util.Properties;
 import java.util.ResourceBundle;
 
 public class Config {
-    private static final String bundlePath = "i18n/strings";
     private static final String propertiesPath = "config.properties";
-
-    public static final Locale DEFAULT_LOCALE = new Locale("en");
 
     private static Properties properties = null;
 
@@ -24,15 +21,5 @@ public class Config {
             }
         }
         return properties;
-    }
-
-    public static ResourceBundle getBundle() {
-        return ResourceBundle.getBundle(bundlePath, DEFAULT_LOCALE);
-    }
-
-    public static ResourceBundle getBundle(String _locale) {
-        Locale locale = new Locale(_locale);
-
-        return ResourceBundle.getBundle(bundlePath, locale);
     }
 }

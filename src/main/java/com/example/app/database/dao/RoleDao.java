@@ -5,14 +5,12 @@ import com.example.app.util.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
-import javax.transaction.Transactional;
 
 public class RoleDao extends AbstractDao<Role> {
     public RoleDao() {
         super(Role.class);
     }
 
-    @Transactional
     public Role findByName(final String roleName) {
         final String QUERY = "select r from Role r where r.role = :role";
         Role role = null;

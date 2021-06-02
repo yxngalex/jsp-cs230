@@ -24,7 +24,6 @@ public class RoleFilter implements Filter {
         HttpSession session = request.getSession();
         boolean loggedIn = (session != null && session.getAttribute("username") != null && session.getAttribute("id") != null);
 
-
         if (loggedIn) {
             Set<Role> roles = (Set<Role>) session.getAttribute("roles");
             boolean allowed = (roles != null) && roles.stream().anyMatch(r -> r.getRole().equals("ADMIN"));
