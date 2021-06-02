@@ -1,33 +1,33 @@
 package com.example.app.database.dao;
 
-import com.example.app.database.entity.User;
+import com.example.app.database.entity.Role;
 import com.example.app.util.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import javax.transaction.Transactional;
 
-public class UserDao extends AbstractDao<User> {
-    public UserDao() {
-        super(User.class);
+public class RoleDao extends AbstractDao<Role> {
+    public RoleDao() {
+        super(Role.class);
     }
 
     @Transactional
-    public User findByUsername(final String username) {
-        final String QUERY = "select u from User u where u.username = :username";
-        User user = null;
+    public Role findByName(final String roleName) {
+        final String QUERY = "select r from Role r where r.role = :role";
+        Role role = null;
         Transaction transaction;
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             transaction = session.beginTransaction();
-            user = session.createQuery(QUERY, User.class)
-                    .setParameter("username", username)
+            role = session.createQuery(QUERY, Role.class)
+                    .setParameter("role", roleName)
                     .getSingleResult();
             transaction.commit();
             session.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return user;
+        return role;
     }
 
 }
