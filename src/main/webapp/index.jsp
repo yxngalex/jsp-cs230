@@ -5,7 +5,8 @@
     <title>LinkedOut | Jobs</title>
 </head>
 <body>
-<h1><%= "A!" %>
+<h1>
+    <%= "A!" %>
 </h1>
 <br/>
 <a href="register.jsp">Register</a>
