@@ -7,6 +7,9 @@
 <body>
 <h1>
     <%= "A!" %>
+    Server version = <%= application.getServerInfo()%>
+    Servlet version = <%= application.getMajorVersion()%>.<%=application.getMinorVersion()%>
+    JSP version = <%=JspFactory.getDefaultFactory().getEngineInfo().getSpecificationVersion()%> <br>
 </h1>
 <br/>
 <a href="register.jsp">Register</a>

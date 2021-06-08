@@ -2,6 +2,7 @@
 html, body {
     background-color: aqua;
     margin-top: 2em;
+    font-family: "Poppins", sans-serif;
 }
 
 .register {

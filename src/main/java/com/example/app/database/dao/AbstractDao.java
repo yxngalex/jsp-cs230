@@ -16,17 +16,17 @@ public abstract class AbstractDao<T> {
     }
 
     public void create(final T entity) {
-        Transaction transaction = null;
-        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        Transaction  transaction = null;
+
+        try {
             transaction = session.beginTransaction();
-            session.save(entity);
+            session.persist(entity);
             transaction.commit();
             session.close();
         } catch (Exception e) {
+            transaction.rollback();
             e.printStackTrace();
-            if (transaction != null) {
-                transaction.rollback();
-            }
         }
     }
 
