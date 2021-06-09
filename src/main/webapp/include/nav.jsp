@@ -33,12 +33,6 @@
     </style>
 </head>
 <body>
-<%
-    String username = (String) session.getAttribute("username");
-    Integer id = (Integer) session.getAttribute("id");
-    boolean loggedIn = username != null && id != null;
-    User user = new UserDao().findByUsername(username);
-%>
 <div id="header">
     <div class="shell">
         <div id="navigation">
