@@ -23,10 +23,10 @@
         <property name="hibernate.dbcp.minIdle">5</property>
         <property name="hibernate.dbcp.maxWaitMillis">-1</property>
         <property name="hibernate.enable_lazy_load_no_trans">true</property>
-        <mapping class="com.example.app.database.entity.Firm" />
-        <mapping class="com.example.app.database.entity.Job" />
-        <mapping class="com.example.app.database.entity.Role" />
-        <mapping class="com.example.app.database.entity.User" />
-        <mapping class="com.example.app.database.entity.Firm" />
+        <mapping class="rs.ac.metropolitan.database.entity.Firm" />
+        <mapping class="rs.ac.metropolitan.database.entity.Job" />
+        <mapping class="rs.ac.metropolitan.database.entity.Role" />
+        <mapping class="rs.ac.metropolitan.database.entity.User" />
+        <mapping class="rs.ac.metropolitan.database.entity.Firm" />
     </session-factory>
 </hibernate-configuration>

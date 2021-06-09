@@ -1,8 +1,8 @@
-<%@ page import="com.example.app.database.dao.RoleDao" %>
-<%@ page import="com.example.app.database.entity.Role" %>
-<%@ page import="com.example.app.database.entity.User" %>
-<%@ page import="com.example.app.database.dao.UserDao" %>
-<%@ page import="com.example.app.security.Security" %>
+<%@ page import="rs.ac.metropolitan.database.dao.RoleDao" %>
+<%@ page import="rs.ac.metropolitan.database.entity.Role" %>
+<%@ page import="rs.ac.metropolitan.database.entity.User" %>
+<%@ page import="rs.ac.metropolitan.database.dao.UserDao" %>
+<%@ page import="rs.ac.metropolitan.security.Security" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html lang="<%=session.getAttribute("lang")%>">
 <head>

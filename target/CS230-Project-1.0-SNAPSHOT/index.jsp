@@ -5,6 +5,7 @@
     <title>LinkedOut | Jobs</title>
 </head>
 <body>
+<%@include file="include/nav.jsp" %>
 <h1>
     <%= "A!" %>
     Server version = <%= application.getServerInfo()%>
@@ -14,5 +15,6 @@
 <br/>
 <a href="register.jsp">Register</a>
 <a href="login.jsp">Login</a>
+<a href="hello-servlet">Servlet</a>
 </body>
 </html>

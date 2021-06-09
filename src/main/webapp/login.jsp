@@ -5,6 +5,33 @@
     <title>LINKEDOUT | Login</title>
 </head>
 <body>
+<%--    <%--%>
+<%--        String username = request.getParameter("username");--%>
+<%--        String password = request.getParameter("password");--%>
+<%--        String userErr = "";--%>
+<%--        String pwErr = "";--%>
+
+
+<%--        User user = new UserDao().findByUsername(username);--%>
+
+<%--        if (user == null) {--%>
+<%--            userErr = "User doesn't exists";--%>
+<%--        } else if (!user.getPassword().equals(Security.hash(password))) {--%>
+<%--            pwErr = "Invalid password";--%>
+<%--        }--%>
+
+<%--        if (user != null) {--%>
+<%--            Properties props = Config.getProperties();--%>
+<%--            int validity = Integer.parseInt(props.getProperty("session-validity"));--%>
+<%--            session.setAttribute("username", user.getUsername());--%>
+<%--            session.setAttribute("id", user.getIdUser());--%>
+<%--            session.setAttribute("roles", user.getRole());--%>
+<%--            session.setMaxInactiveInterval(validity);--%>
+<%--            response.sendRedirect(request.getContextPath() + "/index.jsp");--%>
+<%--        } else {--%>
+<%--            System.out.println("Greska");--%>
+<%--        }--%>
+<%--    %>--%>
     <main>
         <form method="post" action="${pageContext.request.contextPath}/login">
             <h2>Ulogujte se</h2>
