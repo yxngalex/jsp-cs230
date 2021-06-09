@@ -5,16 +5,22 @@
     <title>LINKEDOUT | Login</title>
 </head>
 <body>
-    <main>
-        <form method="post" action="${pageContext.request.contextPath}/login">
+<main class="login-page" style="text-align: center">
+    <div class="card">
+        <div class="card-header">
             <h2>Ulogujte se</h2>
-            <label for="username">Username:</label>
-            <input type="text" name="username" id="username" />
-            <label for="password">Password:</label>
-            <input type="password" name="password" id="password" />
-            <input type="submit" class="btn btn-success" value="Submit" />
-        </form>
+        </div>
+        <div class="card-body">
+            <form method="post" action="${pageContext.request.contextPath}/login">
+                <label for="username">Username:</label>
+                <input type="text" name="username" id="username"/><br><br>
+                <label for="password">Password:</label>
+                <input type="password" name="password" id="password"/><br><br>
+                <input type="submit" class="btn btn-success" value="Submit"/>
+            </form>
+        </div>
         <a href="register.jsp">Register Here!</a>
-    </main>
+    </div>
+</main>
 </body>
 </html>

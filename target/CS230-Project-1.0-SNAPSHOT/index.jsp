@@ -33,13 +33,6 @@
     </style>
 </head>
 <body>
-<%
-    String username = (String) session.getAttribute("username");
-    Integer id = (Integer) session.getAttribute("id");
-    boolean loggedIn = username != null && id != null;
-    User user = new UserDao().findByUsername(username);
-%>
-
 <%@include file="include/nav.jsp" %>
 <main class="main-page">
     <div class="contect-card">
@@ -47,7 +40,7 @@
         <h2>Greetings <span class="name"><%=user.getUsername()%></span>!</h2>
         <h3>Welcome to LINKEDOUT</h3>
         <div class="para">
-            <p>See all jobs <a href="#" style="text-decoration: none; color: darkorange; font-size: 20px;">here!</a>.</p>
+            <p style="font-size: 20px;">See all jobs <a href="#" style="text-decoration: none; color: darkorange;">here!</a>.</p>
         </div>
         <% } %>
         <% if (!loggedIn) {%>

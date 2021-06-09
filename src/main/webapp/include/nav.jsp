@@ -1,5 +1,6 @@
 <%@ page import="rs.ac.metropolitan.database.entity.User" %>
 <%@ page import="rs.ac.metropolitan.database.dao.UserDao" %>
+<%@ page import="rs.ac.metropolitan.database.entity.Role" %>
 <html lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
@@ -33,6 +34,12 @@
     </style>
 </head>
 <body>
+<%
+    String username = (String) session.getAttribute("username");
+    Integer id = (Integer) session.getAttribute("id");
+    boolean loggedIn = username != null && id != null;
+    User user = new UserDao().findByUsername(username);
+%>
 <div id="header">
     <div class="shell">
         <div id="navigation">
@@ -40,12 +47,22 @@
                 <% if (!loggedIn) {%>
                 <li><a href="login.jsp" class="active">Login</a></li>
                 <%}%>
-                <%if (loggedIn) {%>
+                <%if (loggedIn && user.getRole().getRole().equals("Poslodavac")) {%>
                 <li><a href="index.jsp" class="active">Home</a></li>
-                <li><a href="jobs.jsp" class="active">Jobs</a></li>
-                <li><a href="myJobs.jsp" class="active">My Jobs</a></li>
-                <li><a href="firms.jsp" class="active">Firms</a></li>
-                <li><a href="roles.jsp" class="active">Roles</a></li>
+                <li><a href="addJob.jsp" class="active">Create a Job</a></li>
+                <li><a href="jobs.jsp" class="active">Find Jobs</a></li>
+                <li><a href="${pageContext.request.contextPath}/logout" class="active">Logout</a></li>
+                <%}%>
+                <%if (loggedIn && user.getRole().getRole().equals("Zaposleni")) {%>
+                <li><a href="index.jsp" class="active">Home</a></li>
+                <li><a href="jobs.jsp" class="active">Find Jobs</a></li>
+                <li><a href="${pageContext.request.contextPath}/logout" class="active">Logout</a></li>
+                <%}%>
+                <%if (loggedIn && user.getRole().getRole().equals("Admin")) {%>
+                <li><a href="index.jsp" class="active">Home</a></li>
+                <li><a href="jobs.jsp" class="active">Find Jobs</a></li>
+                <li><a href="addUser.jsp" class="active">Add User</a></li>
+                <li><a href="addFirm.jsp" class="active">Add Firm</a></li>
                 <li><a href="${pageContext.request.contextPath}/logout" class="active">Logout</a></li>
                 <%}%>
             </ul>
