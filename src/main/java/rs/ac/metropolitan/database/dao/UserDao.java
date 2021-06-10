@@ -11,7 +11,7 @@ public class UserDao extends AbstractDao<User> {
         super(User.class);
     }
 
-    public User findByUsername(final String username) {
+    public static User findByUsername(final String username) {
         final String QUERY = "select u from User u where u.username = :username";
         User user = null;
         Transaction transaction;

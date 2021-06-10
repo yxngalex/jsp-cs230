@@ -31,15 +31,20 @@
 <body>
  <%
      String name = request.getParameter("firm-name");
-     String address = request.getParameter("address");
+     String address = request.getParameter("firm-address");
      String pwErr = "";
 
-     Firm firm = new Firm();
+     Firm firmChecker = FirmDao.findByName(name);
 
-        firm.setName(name);
-        firm.setAddress(address);
-        FirmDao firmDao = new FirmDao();
-        firmDao.create(firm);
+     if (firmChecker == null) {
+         Firm firm = new Firm();
+         firm.setName(name);
+         firm.setAddress(address);
+         FirmDao firmDao = new FirmDao();
+         firmDao.create(firm);
+     } else {
+         pwErr = "Firma vec postoji u bazi!";
+     }
  %>
 <jsp:include page="../include/nav.jsp"/>
  <div class="register">
@@ -53,8 +58,8 @@
                              <div class="col-md-4">
                                  <label for="firm-name">Name:</label>
                                  <input id="firm-name" name="firm-name" type="text" autofocus="autofocus"/><br/><br/>
-                                 <label for="address">Address:</label>
-                                 <input id="address" name=address" type="text" autofocus="autofocus"/><br/><br/>
+                                 <label for="firm-address">Address:</label>
+                                 <input id="firm-address" name="firm-address" type="text" autofocus="autofocus"/><br/><br/>
                                  <br/>
                                  <span style="color: red"><%= pwErr %></span>
                              </div>
