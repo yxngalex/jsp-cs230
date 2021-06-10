@@ -34,7 +34,7 @@
      String address = request.getParameter("firm-address");
      String pwErr = "";
 
-     Firm firmChecker = FirmDao.findByName(name);
+     Firm firmChecker = new FirmDao().findByName(name);
 
      if (firmChecker == null) {
          Firm firm = new Firm();

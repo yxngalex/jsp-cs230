@@ -56,10 +56,12 @@
 
             userDao.create(user);
             session.setAttribute("newUsername", username);
+            request.getRequestDispatcher("/login.jsp").forward(request, response);
         } else {
             pwErr = "Passwords do not match!";
         }
     }
+
 %>
 <div class="register">
     <main class="container">
@@ -80,7 +82,7 @@
                                 <span style="color: red"><%= pwErr %></span>
                                 <label for="email">Unesite vaš email:</label>
                                 <input id="email" name="email" type="text" autofocus="autofocus"/><br/><br/>
-                                <label for="role">Izaberite da li želite da budete poslodavac ili zaposleni:</label>
+                                <label for="role">Role:</label>
                                 <br/>
                                 <select name="role" id="role">
                                     <option value="Poslodavac">Poslodavac</option>

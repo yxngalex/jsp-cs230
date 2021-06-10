@@ -24,10 +24,10 @@
     request.setAttribute("jobs", jobs);
 
 %>
-<jsp:include page="include/nav.jsp"/>
+<jsp:include page="../include/nav.jsp"/>
 <main>
     <section>
-        <% if (jobs.isEmpty()) {%>
+        <% if (!jobs.isEmpty()) {%>
         <c:forEach items="${jobs}" var="job" varStatus="loop">
             <form action="<c:url value="/subscribe"/>" method="post">
                 <div class="card border-info mb-3" style="max-width: 25rem; margin-bottom: 5em">

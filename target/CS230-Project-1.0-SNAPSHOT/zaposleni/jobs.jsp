@@ -2,6 +2,7 @@
 <%@ page import="rs.ac.metropolitan.database.dao.JobDao" %>
 <%@ page import="rs.ac.metropolitan.database.entity.Job" %>
 <%@ page import="java.util.List" %>
+<%@ page import="rs.ac.metropolitan.database.entity.Role" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -24,10 +25,10 @@
     request.setAttribute("jobs", jobs);
 
 %>
-<jsp:include page="include/nav.jsp"/>
+<jsp:include page="../include/nav.jsp"/>
 <main>
     <section>
-        <% if (jobs.size() != 0) {%>
+        <% if (!jobs.isEmpty()) {%>
         <c:forEach items="${jobs}" var="job" varStatus="loop">
             <form action="<c:url value="/subscribe"/>" method="post">
                 <div class="card border-info mb-3" style="max-width: 25rem; margin-bottom: 5em">

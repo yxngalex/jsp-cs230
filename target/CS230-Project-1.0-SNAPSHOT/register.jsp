@@ -56,10 +56,12 @@
 
             userDao.create(user);
             session.setAttribute("newUsername", username);
+            request.getRequestDispatcher("/login.jsp").forward(request, response);
         } else {
             pwErr = "Passwords do not match!";
         }
     }
+
 %>
 <div class="register">
     <main class="container">
