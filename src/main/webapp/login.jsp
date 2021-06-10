@@ -8,7 +8,7 @@
 <main class="login-page" style="text-align: center">
     <div class="card">
         <div class="card-header">
-            <h2>Ulogujte se</h2>
+            <h2>Log in</h2>
         </div>
         <div class="card-body">
             <form method="post" action="${pageContext.request.contextPath}/login">

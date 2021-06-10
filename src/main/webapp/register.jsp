@@ -66,7 +66,7 @@
         <div class="container-fluid">
             <div class="register-menu">
                 <form method="post" action="register.jsp">
-                    <h2 class="testing">Registruj se</h2>
+                    <h2 class="testing">Sign up</h2>
                     <div class="row">
                         <div class="fields">
                             <div class="col-md-4">
@@ -95,7 +95,6 @@
                 </form>
             </div>
         </div>
-
     </main>
 </div>
 </body>

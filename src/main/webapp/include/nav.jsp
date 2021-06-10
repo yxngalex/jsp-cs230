@@ -61,8 +61,8 @@
                 <%if (loggedIn && user.getRole().getRole().equals("Admin")) {%>
                 <li><a href="index.jsp" class="active">Home</a></li>
                 <li><a href="jobs.jsp" class="active">Find Jobs</a></li>
-                <li><a href="addUser.jsp" class="active">Add User</a></li>
-                <li><a href="addFirm.jsp" class="active">Add Firm</a></li>
+                <li><a href="admin/addUser.jsp" class="active">Add User</a></li>
+                <li><a href="admin/addFirm.jsp" class="active">Add Firm</a></li>
                 <li><a href="${pageContext.request.contextPath}/logout" class="active">Logout</a></li>
                 <%}%>
             </ul>
