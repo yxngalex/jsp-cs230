@@ -49,7 +49,7 @@
                 <%}%>
                 <%if (loggedIn && user.getRole().getRole().equals("Poslodavac")) {%>
                 <li><a href="index.jsp" class="active">Home</a></li>
-                <li><a href="addJob.jsp" class="active">Create a Job</a></li>
+                <li><a href="poslodavac/addJob.jsp" class="active">Create a Job</a></li>
                 <li><a href="jobs.jsp" class="active">Find Jobs</a></li>
                 <li><a href="${pageContext.request.contextPath}/logout" class="active">Logout</a></li>
                 <%}%>

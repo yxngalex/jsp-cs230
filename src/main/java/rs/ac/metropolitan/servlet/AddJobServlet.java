@@ -37,6 +37,6 @@ public class AddJobServlet extends HttpServlet {
 
         jobDao.create(job);
 
-        req.getRequestDispatcher("/addJob.jsp").forward(req, resp);
+        req.getRequestDispatcher("index.jsp").forward(req, resp);
     }
 }
