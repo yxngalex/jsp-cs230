@@ -6,6 +6,8 @@ import lombok.EqualsAndHashCode;
 import javax.persistence.*;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "job")
@@ -34,6 +36,10 @@ public class Job implements Serializable {
 
     @Column(name = "description")
     private String description;
+
+    @ManyToMany(cascade = {CascadeType.MERGE, CascadeType.REFRESH})
+    @JoinTable(name = "user_job", joinColumns = @JoinColumn(name = "job_id"), inverseJoinColumns = @JoinColumn(name = "user_id"))
+    private List<User> users = new ArrayList<>();
 
     @Override
     public String toString() {

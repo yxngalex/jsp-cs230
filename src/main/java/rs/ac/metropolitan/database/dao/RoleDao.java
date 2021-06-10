@@ -11,7 +11,7 @@ public class RoleDao extends AbstractDao<Role> {
         super(Role.class);
     }
 
-    public static Role findByName(final String roleName) {
+    public Role findByName(final String roleName) {
         final String QUERY = "select r from Role r where r.role = :role";
         Role role = null;
         Transaction transaction;

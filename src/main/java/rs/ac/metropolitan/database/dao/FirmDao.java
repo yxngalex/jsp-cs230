@@ -11,7 +11,7 @@ public class FirmDao extends AbstractDao<Firm>{
         super(Firm.class);
     }
 
-    public static Firm findByName(final String firmName) {
+    public Firm findByName(final String firmName) {
         final String QUERY = "select f from Firm f where f.name = :firm";
         Firm firm = null;
         Transaction transaction;

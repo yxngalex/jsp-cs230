@@ -36,11 +36,26 @@
 <%@include file="include/nav.jsp" %>
 <main class="main-page">
     <div class="contect-card">
-        <% if (loggedIn) {%>
+        <% if (loggedIn && user.getRole().getRole().equals("Zaposleni")) {%>
         <h2>Greetings <span class="name"><%=user.getUsername()%></span>!</h2>
         <h3>Welcome to LINKEDOUT</h3>
         <div class="para">
             <p style="font-size: 20px;">See all jobs <a href="#" style="text-decoration: none; color: darkorange;">here!</a>.</p>
+        </div>
+        <% } %>
+        <% if (loggedIn && user.getRole().getRole().equals("Admin")) {%>
+        <h2>Greetings <span class="name"><%=user.getUsername()%></span>!</h2>
+        <h3>Welcome to LINKEDOUT</h3>
+        <div class="para">
+            <p style="font-size: 20px;">Add a new user <a href="admin/addUser.jsp" style="text-decoration: none; color: darkorange;">here!</a>.</p>
+            <p style="font-size: 20px;">Add a new firm <a href="admin/addFirm.jsp" style="text-decoration: none; color: darkorange;">here!</a>.</p>
+        </div>
+        <% } %>
+        <% if (loggedIn && user.getRole().getRole().equals("Poslodavac")) {%>
+        <h2>Greetings <span class="name"><%=user.getUsername()%></span>!</h2>
+        <h3>Welcome to LINKEDOUT</h3>
+        <div class="para">
+            <p style="font-size: 20px;">Create a new job <a href="poslodavac/addJob.jsp" style="text-decoration: none; color: darkorange;">here!</a>.</p>
         </div>
         <% } %>
         <% if (!loggedIn) {%>

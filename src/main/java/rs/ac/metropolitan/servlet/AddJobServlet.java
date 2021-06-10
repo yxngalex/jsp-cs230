@@ -21,7 +21,7 @@ public class AddJobServlet extends HttpServlet {
         String description = req.getParameter("description");
         String firmName = req.getParameter("firm");
 
-        Firm firm = FirmDao.findByName(firmName);
+        Firm firm = new FirmDao().findByName(firmName);
 
         if (firm == null) {
             System.out.println("Firm doesn't exist");

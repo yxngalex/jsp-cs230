@@ -1,6 +1,7 @@
 <%@ page import="rs.ac.metropolitan.database.entity.User" %>
 <%@ page import="rs.ac.metropolitan.database.dao.UserDao" %>
 <%@ page import="rs.ac.metropolitan.database.entity.Role" %>
+<%@ page import="rs.ac.metropolitan.database.dao.RoleDao" %>
 <html lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
@@ -50,7 +51,6 @@
                 <%if (loggedIn && user.getRole().getRole().equals("Poslodavac")) {%>
                 <li><a href="index.jsp" class="active">Home</a></li>
                 <li><a href="poslodavac/addJob.jsp" class="active">Create a Job</a></li>
-                <li><a href="jobs.jsp" class="active">Find Jobs</a></li>
                 <li><a href="${pageContext.request.contextPath}/logout" class="active">Logout</a></li>
                 <%}%>
                 <%if (loggedIn && user.getRole().getRole().equals("Zaposleni")) {%>
@@ -60,7 +60,6 @@
                 <%}%>
                 <%if (loggedIn && user.getRole().getRole().equals("Admin")) {%>
                 <li><a href="index.jsp" class="active">Home</a></li>
-                <li><a href="jobs.jsp" class="active">Find Jobs</a></li>
                 <li><a href="admin/addUser.jsp" class="active">Add User</a></li>
                 <li><a href="admin/addFirm.jsp" class="active">Add Firm</a></li>
                 <li><a href="${pageContext.request.contextPath}/logout" class="active">Logout</a></li>

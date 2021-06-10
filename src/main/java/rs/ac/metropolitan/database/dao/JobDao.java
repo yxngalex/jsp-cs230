@@ -11,7 +11,7 @@ public class JobDao extends AbstractDao<Job>{
         super(Job.class);
     }
 
-    public static Job findByName(final String jobName) {
+    public Job findByName(final String jobName) {
         final String QUERY = "select j from Job j where j.name = :job";
         Job job = null;
         Transaction transaction;
