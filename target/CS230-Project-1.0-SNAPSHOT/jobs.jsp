@@ -27,10 +27,12 @@
     JobDao jobDao = new JobDao();
     UserJobDao userJobdao = new UserJobDao();
 
+    String num = request.getParameter("index");
+
     List<Job> jobs = jobDao.findAll();
     request.setAttribute("jobs", jobs);
 
-    Job job = JobDao.findByName(request.getParameter("name"));
+    Job job = jobDao.find(num);
 
     User user = UserDao.findByUsername((String) session.getAttribute("username"));
 
@@ -44,7 +46,7 @@
     <section>
         <form action="jobs.jsp" method="post">
             <% if (jobs.size() != 0) {%>
-            <c:forEach items="${jobs}" var="jobs">
+            <c:forEach items="${jobs}" var="jobs" varStatus="loop">
                 <div class="card border-info mb-3" style="max-width: 25rem; margin-bottom: 5em">
                     <div class="card-header">${jobs.name}</div>
                     <div class="card-body">
@@ -53,7 +55,7 @@
                             <p class="card-text">${jobs.description}</p>
                         </div>
                     </div>
-                    <input type="hidden" name="name" value="${jobs.name}">
+                    <input type="hidden" name="index" value="${loop.index}">
                     <div class="card-footer bg-transparent border-success">
                         <input type="submit" class="btn btn-primary" value="Subscribe">
                     </div>
@@ -65,5 +67,10 @@
         </form>
     </section>
 </main>
+    <script>
+        getCategoryIndex = (index) => {
+            return index;
+        }
+    </script>
 </body>
 </html>
